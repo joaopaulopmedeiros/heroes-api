@@ -6520,9 +6520,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\WebApi.Unit.Tests.csproj",
-      "projectName": "WebApi.Unit.Tests",
-      "projectPath": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\WebApi.Unit.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\Heroes.WebApi.Unit.Tests.csproj",
+      "projectName": "Heroes.WebApi.Unit.Tests",
+      "projectPath": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\Heroes.WebApi.Unit.Tests.csproj",
       "packagesPath": "C:\\Users\\medeirja\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\obj\\",
       "projectStyle": "PackageReference",

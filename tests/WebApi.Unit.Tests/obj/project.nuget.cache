@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "86rtDJ56QGo5G6jjPYkOn/7tbn5IDBKAIuWrGHSknOrZk12cijTmrY6+cy9R3eaKHsQqHVdTj0IaZOpdgUty8Q==",
+  "dgSpecHash": "zJUugJmMCCDx3e9YH2B6RMWwJ+Rjx1F3Ho59pulF4aB4OR0beBAmJR/38X0iDIhitLzyvsDUluVCWm1TlB1k4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\WebApi.Unit.Tests.csproj",
+  "projectFilePath": "C:\\Users\\medeirja\\source\\repos\\Hero\\api\\tests\\WebApi.Unit.Tests\\Heroes.WebApi.Unit.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\medeirja\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\medeirja\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
