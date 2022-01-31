@@ -3,6 +3,7 @@ using WebApi.Responses;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WebApi.Services;
+using WebApi.Domain.Models;
 
 namespace WebApi.Controllers
 {
@@ -16,7 +17,7 @@ namespace WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<HeroCatalog> Get
+        public async Task<PaginationResponse<Hero>> Get
         (
             [FromQuery] GetAllHeroesRequest request, 
             [FromServices] SearchHeroesService service

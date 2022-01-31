@@ -3,7 +3,8 @@ using WebApi.Responses;
 using System.Threading.Tasks;
 using WebApi.Infrastructure.Databse.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using Heroes.WebApi.Infrastructure.Database.Extensions;
+using WebApi.Domain.Models;
 
 namespace WebApi.Services
 {
@@ -16,15 +17,11 @@ namespace WebApi.Services
             _context = context;
         }
 
-        public async Task<HeroCatalog> SearchByAsync(GetAllHeroesRequest request)
+        public async Task<PaginationResponse<Hero>> SearchByAsync(GetAllHeroesRequest request)
         {
-            var result = await _context.Heroes
-                .Skip((request.CurrentPage - 1) * request.PerPage)
-                .Take(request.PerPage)
+            return await _context.Heroes
                 .Include(e => e.Comics)
-                .ToListAsync();
-
-           return new HeroCatalog(result);
+                .PaginateAsync(request.CurrentPage, request.PerPage);
         }
     }
 }
