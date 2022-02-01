@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using WebApi.Infrastructure.Database.Repositories;
 using WebApi.Infrastructure.Databse.Contexts;
 using WebApi.Mappers;
 using WebApi.Services;
@@ -20,6 +21,8 @@ namespace WebApi.Infrastructure.Ioc
             });
 
             services.AddAutoMapper(typeof(HeroProfile));
+
+            services.AddTransient<HeroRepository>();
 
             services.AddTransient<SearchHeroesService>();
 

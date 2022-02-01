@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Heroes.WebApi.Infrastructure.Database.Extensions;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using WebApi.Infrastructure.Databse.Contexts;
+using WebApi.Infrastructure.Database.Extensions;
+using WebApi.Infrastructure.Database.Repositories;
+using WebApi.Infrastructure.Database.Specifications;
 using WebApi.Requests;
 using WebApi.Responses;
 
@@ -11,12 +11,12 @@ namespace WebApi.Services
 {
     public class SearchHeroesService
     {
-        private readonly HeroDbContext _context;
+        private readonly HeroRepository _repository;
         private readonly IConfigurationProvider _mappingConfig;
 
-        public SearchHeroesService(HeroDbContext context, IConfigurationProvider mappingConfig)
+        public SearchHeroesService(HeroRepository repository, IConfigurationProvider mappingConfig)
         {
-            _context = context;
+            _repository = repository;
             _mappingConfig = mappingConfig;
         }
 
@@ -27,9 +27,8 @@ namespace WebApi.Services
         /// <returns></returns>
         public async Task<PaginationResponse<HeroResponse>> SearchByAsync(GetAllHeroesRequest request)
         {
-            return await _context.Heroes
-                .Include(e => e.Comics)
-                .Filter(new GetAllHeroesSpecification(request.Name, request.Power).Criteria())
+            return await _repository
+                .FilterBySpec(new GetAllHeroesSpecification(request.Name, request.Power))
                 .ProjectTo<HeroResponse>(_mappingConfig)
                 .PaginateAsync(request.CurrentPage, request.PerPage);
         }

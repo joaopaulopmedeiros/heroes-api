@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Responses;
 
-namespace Heroes.WebApi.Infrastructure.Database.Extensions
+namespace WebApi.Infrastructure.Database.Extensions
 {
     public static class PaginationExtension
     {

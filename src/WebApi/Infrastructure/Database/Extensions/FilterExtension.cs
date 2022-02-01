@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Heroes.WebApi.Infrastructure.Database.Extensions
+namespace WebApi.Infrastructure.Database.Extensions
 {
     public static class FilterExtension
     {

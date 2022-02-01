@@ -2,9 +2,9 @@
 using System.Linq.Expressions;
 using WebApi.Domain.Models;
 
-namespace WebApi.Services
+namespace WebApi.Infrastructure.Database.Specifications
 {
-    internal class GetAllHeroesSpecification
+    public class GetAllHeroesSpecification
     {
         private string Name;
         private int? Power;
