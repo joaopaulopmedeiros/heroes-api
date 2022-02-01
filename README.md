@@ -9,3 +9,6 @@ This project is for those developers who want to understand how to implement a r
 - Redis Distributed Caching;
 - Pagination;
 - Filtering;
+
+## How do I get started?
+[Just click here!](./docs/how-to-run-locally.md)
