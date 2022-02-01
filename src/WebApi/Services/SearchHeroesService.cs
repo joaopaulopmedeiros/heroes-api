@@ -20,6 +20,11 @@ namespace WebApi.Services
             _mappingConfig = mappingConfig;
         }
 
+        /// <summary>
+        /// Get paginated heroes resource and apply filter by name/power if any informed (not null)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<PaginationResponse<HeroResponse>> SearchByAsync(GetAllHeroesRequest request)
         {
             return await _context.Heroes
