@@ -17,7 +17,7 @@ namespace WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<PaginationResponse<Hero>> Get
+        public async Task<PaginationResponse<HeroResponse>> Get
         (
             [FromQuery] GetAllHeroesRequest request, 
             [FromServices] SearchHeroesService service

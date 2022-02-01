@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using WebApi.Infrastructure.Databse.Contexts;
+using WebApi.Mappers;
 using WebApi.Services;
 
 namespace WebApi.Infrastructure.Ioc
@@ -17,6 +18,8 @@ namespace WebApi.Infrastructure.Ioc
                     new MySqlServerVersion(new Version(8, 0, 27))
                 );
             });
+
+            services.AddAutoMapper(typeof(HeroProfile));
             
             services.AddTransient<SearchHeroesService>();
 
