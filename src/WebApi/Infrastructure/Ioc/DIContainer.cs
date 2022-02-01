@@ -20,7 +20,7 @@ namespace WebApi.Infrastructure.Ioc
             });
 
             services.AddAutoMapper(typeof(HeroProfile));
-            
+
             services.AddTransient<SearchHeroesService>();
 
             return services;

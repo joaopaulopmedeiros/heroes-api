@@ -1,12 +1,11 @@
-﻿using WebApi.Requests;
-using WebApi.Responses;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Heroes.WebApi.Infrastructure.Database.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using WebApi.Infrastructure.Databse.Contexts;
-using Microsoft.EntityFrameworkCore;
-using Heroes.WebApi.Infrastructure.Database.Extensions;
-using WebApi.Domain.Models;
-using AutoMapper.QueryableExtensions;
-using AutoMapper;
+using WebApi.Requests;
+using WebApi.Responses;
 
 namespace WebApi.Services
 {

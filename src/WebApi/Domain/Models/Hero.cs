@@ -1,5 +1,3 @@
-using System;
-
 namespace WebApi.Domain.Models
 {
     public class Hero

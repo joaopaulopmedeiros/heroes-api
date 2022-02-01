@@ -1,8 +1,8 @@
-﻿using WebApi.Responses;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Responses;
 
 namespace Heroes.WebApi.Infrastructure.Database.Extensions
 {
@@ -26,7 +26,7 @@ namespace Heroes.WebApi.Infrastructure.Database.Extensions
             paged.PageSize = limit;
 
             var startRow = CalculateStartRow(page, limit);
-            
+
             paged.Items = await query
                        .Skip(startRow)
                        .Take(limit)

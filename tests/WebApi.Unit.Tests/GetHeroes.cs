@@ -1,5 +1,3 @@
-using Moq;
-using System;
 using Xunit;
 
 namespace WebApi.Unit.Tests

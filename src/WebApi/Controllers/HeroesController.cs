@@ -1,9 +1,8 @@
-﻿using WebApi.Requests;
-using WebApi.Responses;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using WebApi.Requests;
+using WebApi.Responses;
 using WebApi.Services;
-using WebApi.Domain.Models;
 
 namespace WebApi.Controllers
 {
@@ -19,7 +18,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<PaginationResponse<HeroResponse>> Get
         (
-            [FromQuery] GetAllHeroesRequest request, 
+            [FromQuery] GetAllHeroesRequest request,
             [FromServices] SearchHeroesService service
         )
         {

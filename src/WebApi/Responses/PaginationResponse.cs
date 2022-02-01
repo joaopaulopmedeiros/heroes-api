@@ -2,7 +2,7 @@
 
 namespace WebApi.Responses
 {
-    public class PaginationResponse <TModel>
+    public class PaginationResponse<TModel>
     {
         const int MaxPageSize = 100;
         private int _pageSize;

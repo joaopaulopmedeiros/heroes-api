@@ -18,7 +18,7 @@ namespace WebApi.Infrastructure.Databse.Contexts
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new HeroMapper());
             modelBuilder.ApplyConfiguration(new ComicsMapper());
