@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 using WebApi.Infrastructure.Ioc;
 
 namespace WebApi
@@ -23,7 +24,7 @@ namespace WebApi
             services.AddDependencies();
             services.AddControllers();
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Heroes Api", Description = "Restful web api for easy consume heroes informations.", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = Environment.GetEnvironmentVariable("APP_NAME"), Description = "Restful web api for easy consume heroes informations.", Version = "v1" });
             });
         }
 
@@ -33,7 +34,7 @@ namespace WebApi
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Heroes Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{Environment.GetEnvironmentVariable("APP_NAME")} v1"));
             }
 
             app.UseHttpsRedirection();

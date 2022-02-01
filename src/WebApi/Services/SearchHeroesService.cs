@@ -25,7 +25,7 @@ namespace WebApi.Services
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public async Task<PaginationResponse<HeroResponse>> SearchByAsync(GetAllHeroesRequest request)
+        public async Task<Pagination<HeroResponse>> SearchByAsync(GetAllHeroesRequest request)
         {
             return await _repository
                 .FilterBySpec(new GetAllHeroesSpecification(request.Name, request.Power))

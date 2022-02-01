@@ -8,7 +8,7 @@ namespace WebApi.Infrastructure.Database.Extensions
 {
     public static class PaginationExtension
     {
-        public static async Task<PaginationResponse<TModel>> PaginateAsync<TModel>
+        public static async Task<Pagination<TModel>> PaginateAsync<TModel>
         (
             this IQueryable<TModel> query,
             int page,
@@ -17,7 +17,7 @@ namespace WebApi.Infrastructure.Database.Extensions
             where TModel : class
         {
 
-            var paged = new PaginationResponse<TModel>();
+            var paged = new Pagination<TModel>();
 
             page = SanitizePageParam(page);
 

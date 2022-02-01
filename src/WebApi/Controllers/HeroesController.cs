@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using WebApi.Cache;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WebApi.Requests;
-using WebApi.Responses;
 using WebApi.Services;
 
 namespace WebApi.Controllers
@@ -16,13 +16,15 @@ namespace WebApi.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<PaginationResponse<HeroResponse>> Get
+        [Cache(600)]
+        public async Task<IActionResult> Get
         (
             [FromQuery] GetAllHeroesRequest request,
             [FromServices] SearchHeroesService service
         )
         {
-            return await service.SearchByAsync(request);
+            var result = await service.SearchByAsync(request);
+            return Ok(result);
         }
     }
 }
