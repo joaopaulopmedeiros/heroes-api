@@ -21,6 +21,7 @@ namespace WebApi.Services
         {
             return await _context.Heroes
                 .Include(e => e.Comics)
+                .Filter(new GetAllHeroesSpecification(request.Name, request.Power).Criteria())
                 .PaginateAsync(request.CurrentPage, request.PerPage);
         }
     }
