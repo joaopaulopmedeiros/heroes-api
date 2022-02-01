@@ -1,9 +1,11 @@
-# Heroes Api
+<div align="center">
+    <h1>Heroes Api</h1>
+</div>
 
-## Description
+## 📘 Description
 This project is for those developers who want to understand how to implement a restful web api with .NET.
 
-## Features
+## 🔥 Features
 - Redis Distributed Caching;
 - Pagination;
 - Filtering;
